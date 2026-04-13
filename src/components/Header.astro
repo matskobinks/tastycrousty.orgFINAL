@@ -1,4 +1,6 @@
 ---
+import logo from '../assets/images/logo.png';
+
 const links = [
 	{ href: '/', label: 'Accueil' },
 	{ href: '/bts-sio', label: 'BTS SIO' },
@@ -12,7 +14,15 @@ const currentPath = Astro.url.pathname;
 
 <header class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/85 backdrop-blur-sm transition-colors duration-200 dark:border-slate-800 dark:bg-slate-950/85">
 	<div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6">
-		<a href="/" class="text-sm font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-cyan-300">Portfolio SISR</a>
+		<a href="/" class="inline-flex shrink-0 items-center rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-950">
+			<img
+				src={logo.src}
+				alt="Logo du portfolio"
+				class="h-10 w-auto max-w-[200px] sm:h-11 sm:max-w-[240px] md:max-w-[300px]"
+				loading="eager"
+				draggable="false"
+			/>
+		</a>
 
 		<nav aria-label="Navigation principale" class="order-3 w-full md:order-2 md:w-auto">
 			<ul class="flex flex-wrap gap-1 rounded-xl bg-slate-100/90 p-1 dark:bg-slate-900/80">
