@@ -52,8 +52,3 @@ npm run preview
 ```
 
 Le build de production est genere dans `dist/` et peut etre deployee sur un hebergement mutualise statique standard.
-
-## Notes
-
-- Les fichiers `public/docs/cv.pdf` et `public/docs/certifications.pdf` sont des placeholders a remplacer avec tes documents reels.
-- Version Node recommandee: 18.17+ (ou superieure).
