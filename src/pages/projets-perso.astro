@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="Projets Personnels | Portfolio" description="Grille de projets personnels techniques.">
+	<section class="mb-6 animate-slide-up">
+		<h1 class="text-3xl font-bold text-slate-900 dark:text-cyan-100 md:text-4xl">Projets Personnels</h1>
+		<p class="mt-3 max-w-3xl text-base leading-7 text-slate-700 dark:text-slate-200">
+			En dehors du cadre scolaire, je mene des projets personnels pour tester des solutions concretes, approfondir mes competences et explorer de nouveaux usages autour des infrastructures systemes et reseaux.
+		</p>
+	</section>
+
+	<section class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+		<ProjectCard title="Homelab 3U" subtitle="Infra personnelle sur Intel NUC + JBOD" technos={['Docker', 'Samba', 'Pi-hole', 'Navidrome', 'Linux']}> 
+			<p>
+				Conception d'une infrastructure compacte pour heberger des services utiles au quotidien: partage de stockage a distance via Samba, filtrage DNS avec Pi-hole et streaming musical auto-heberge avec Navidrome.
+			</p>
+			<a
+				href="/docs/projets/homelab3u.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="mt-4 inline-flex items-center rounded-lg border border-teal-300 bg-teal-50 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-teal-700 transition-colors duration-150 hover:bg-teal-100 dark:border-cyan-500/40 dark:bg-cyan-900/30 dark:text-cyan-200 dark:hover:bg-cyan-900/50"
+			>
+				Voir le PDF du projet
+			</a>
+		</ProjectCard>
+
+		<ProjectCard title="Hackintosh" subtitle="Installation de macOS sur HP Zbook 17 G3" technos={['OpenCore', 'UEFI', 'Dual Boot', 'Drivers']}> 
+			<p>
+				Projet de compatibilite materielle et logicielle autour d'une installation macOS optimisee, avec un focus sur la stabilite, les performances et la resolution des problemes de drivers.
+			</p>
+		</ProjectCard>
+
+		<ProjectCard title="Serveur Minecraft" subtitle="Plateforme multi-emplacements pour 300 joueurs" technos={['VPS OVH', 'Linux', 'Bukkit/Proxy', 'Monitoring']}> 
+			<p>
+				Configuration d'un serveur Minecraft haute charge avec gestion multi-emplacements, optimisation des ressources et supervision pour assurer une experience fluide lors des pics de connexion.
+			</p>
+		</ProjectCard>
+
+		<ProjectCard title="Serveur Web Personnel" subtitle="Portail de redirection vers les serveurs de jeu" technos={['Nginx', 'DNS', 'HTML/CSS', 'Reverse Proxy']}> 
+			<p>
+				Developpement d'un portail web personnel centralisant les acces utilisateurs vers differents serveurs de jeu, avec une presentation claire des services et des points d'entree reseau.
+			</p>
+			<a
+				href="/docs/simple%20html.html"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="mt-4 inline-flex items-center rounded-lg border border-slate-300 bg-slate-100 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 transition-colors duration-150 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+			>
+				Voir la page web
+			</a>
+		</ProjectCard>
+	</section>
+</Layout>

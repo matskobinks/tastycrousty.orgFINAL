@@ -1,0 +1,22 @@
+---
+interface Props {
+	title: string;
+	subtitle?: string;
+	technos?: string[];
+}
+
+const { title, subtitle = '', technos = [] } = Astro.props;
+---
+
+<article class="rounded-2xl border border-slate-200/85 bg-white/88 p-5 shadow-soft transition-colors duration-200 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/82 dark:hover:border-slate-700">
+	<h3 class="text-lg font-semibold text-slate-900 dark:text-cyan-100">{title}</h3>
+	{subtitle && <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{subtitle}</p>}
+	{technos.length > 0 && (
+		<ul class="mt-4 flex flex-wrap gap-2">
+			{technos.map((tech) => <li class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">{tech}</li>)}
+		</ul>
+	)}
+	<div class="mt-4 space-y-2 text-sm leading-6 text-slate-700 dark:text-slate-200">
+		<slot />
+	</div>
+</article>

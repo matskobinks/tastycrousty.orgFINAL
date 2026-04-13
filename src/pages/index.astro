@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionCard from '../components/SectionCard.astro';
+import saintCharlesImage from '../assets/images/saint-charles-athis-mons.jpg';
+import { existsSync, readdirSync } from 'node:fs';
+
+const cnilDirUrl = new URL('../../public/docs/cnil', import.meta.url);
+const cnilPdfUrls = existsSync(cnilDirUrl)
+	? readdirSync(cnilDirUrl)
+			.filter((fileName) => fileName.toLowerCase().endsWith('.pdf'))
+			.sort((a, b) => a.localeCompare(b, 'fr'))
+			.map((fileName) => `/docs/cnil/${encodeURIComponent(fileName)}`)
+	: [];
+---
+
+<Layout title="Accueil | Portfolio BTS SIO" description="Accueil et profil professionnel pour l'epreuve E5 BTS SIO SISR.">
+	<section class="mb-8 flex flex-col-reverse gap-6 rounded-3xl border border-slate-200/80 bg-white/88 p-6 shadow-soft backdrop-blur-[2px] animate-slide-up dark:border-slate-800 dark:bg-slate-900/82 sm:p-8 md:flex-row md:gap-8 md:p-10">
+		<div class="flex-1">
+			<p class="text-xs font-semibold uppercase tracking-[0.2em] text-teal-600 dark:text-cyan-300">BTS SIO - Option SISR</p>
+			<h1 class="mt-3 max-w-2xl text-2xl font-bold leading-tight text-slate-900 dark:text-cyan-100 sm:text-3xl md:text-4xl">
+				Mathis, etudiant en 2eme annee de BTS SIO SISR et futur administrateur infrastructures.
+			</h1>
+			<p class="mt-4 max-w-xl text-sm leading-6 text-slate-700 dark:text-slate-200 sm:text-base">
+				Je construis ce portfolio pour presenter mon parcours, mes projets et ma progression technique autour des systemes, des reseaux et de la securisation des infrastructures.
+			</p>
+		</div>
+		<div class="flex shrink-0 justify-center md:justify-end">
+			<img
+				src="/images/profile.jpg"
+				alt="Photo de profil - Mathis"
+				class="h-40 w-40 rounded-2xl border-2 border-slate-200 object-cover shadow-lg dark:border-slate-700 sm:h-48 sm:w-48 md:h-56 md:w-56"
+				loading="eager"
+			/>
+		</div>
+	</section>
+
+	<section class="grid gap-5 md:grid-cols-2">
+		<SectionCard title="Mon parcours et ma passion IT" className="animate-slide-up stagger-1">
+			<p>
+				Je m'appelle Mathis et je suis en deuxieme annee de BTS SIO, specialite SISR. Depuis mes premieres manipulations en reseau et virtualisation, j'ai developpe une vraie passion pour l'administration systeme, la supervision et la resolution d'incidents.
+			</p>
+			<p>
+				Mon objectif est de devenir un professionnel capable de concevoir des environnements IT fiables, documentes et securises, avec une forte culture de service et d'amelioration continue.
+			</p>
+		</SectionCard>
+
+		<SectionCard title="Mon alternance" className="animate-slide-up stagger-2">
+			<p>
+				Je travaille en tant qu'apprenti technicien informatique au Groupe scolaire prive Saint-Charles, a Athis-Mons (France). J'interviens au quotidien sur des besoins utilisateurs et infrastructures dans un environnement exigeant et multi-profils.
+			</p>
+			<p>
+				Mes missions principales couvrent la preparation et maintenance des postes, le support technique de proximite, la gestion des acces, et la participation au maintien en condition operationnelle du parc et du reseau.
+			</p>
+		</SectionCard>
+	</section>
+
+	<SectionCard title="Mon environnement d'alternance" className="mt-5 animate-fade-in">
+		<p>
+			Le Groupe scolaire prive Saint-Charles a Athis-Mons constitue mon terrain d'apprentissage principal: un contexte reel qui me permet d'ameliorer ma rigueur, ma communication et ma capacite de diagnostic.
+		</p>
+		<figure class="mt-4 overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-700">
+			<img
+				src={saintCharlesImage.src}
+				alt="Groupe scolaire prive Saint-Charles a Athis-Mons"
+				class="h-40 w-full object-cover sm:h-56 md:h-72"
+				loading="lazy"
+			/>
+			<figcaption class="bg-slate-50 px-4 py-2 text-xs text-slate-600 dark:bg-slate-900 dark:text-slate-300">
+				Photo de l'etablissement Saint-Charles a Athis-Mons.
+			</figcaption>
+		</figure>
+	</SectionCard>
+
+	<SectionCard title="Telechargements" className="mt-5 animate-fade-in">
+		<p>
+			Retrouve ici les documents utiles pour consulter mon profil de facon detaillee.
+		</p>
+		<div class="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3">
+			<a
+				href="/docs/cv.pdf"
+				download
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-teal-700"
+			>
+				Telecharger mon CV (PDF)
+			</a>
+			<a
+				href="/docs/certifications.pdf"
+				download
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-slate-700 px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-slate-800"
+			>
+				Telecharger mes certifications (PDF)
+			</a>
+			<button
+				type="button"
+				id="download-cnil-certifications"
+				data-files={JSON.stringify(cnilPdfUrls)}
+				disabled={cnilPdfUrls.length === 0}
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-slate-800 px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-slate-900 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-slate-200 dark:text-slate-900 dark:hover:bg-white"
+			>
+				Telecharger mes certifications CNIL ({cnilPdfUrls.length} PDF)
+			</button>
+		</div>
+		<p class="text-xs text-slate-500 dark:text-slate-400">
+			Le bouton CNIL telecharge automatiquement tous les PDF presents dans /public/docs/cnil.
+		</p>
+	</SectionCard>
+
+	<script>
+		const downloadCnilButton = document.getElementById('download-cnil-certifications');
+
+		if (downloadCnilButton) {
+			downloadCnilButton.addEventListener('click', () => {
+				const rawFiles = downloadCnilButton.getAttribute('data-files');
+
+				if (!rawFiles) {
+					return;
+				}
+
+				let files = [];
+				try {
+					files = JSON.parse(rawFiles);
+				} catch {
+					files = [];
+				}
+
+				files.forEach((fileUrl, index) => {
+					setTimeout(() => {
+						const link = document.createElement('a');
+						link.href = fileUrl;
+						link.setAttribute('download', '');
+						document.body.appendChild(link);
+						link.click();
+						link.remove();
+					}, index * 160);
+				});
+			});
+		}
+	</script>
+</Layout>

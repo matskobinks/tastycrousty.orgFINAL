@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionCard from '../components/SectionCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="Veille Technologique IA | Portfolio" description="Veille technologique sur l'Intelligence Artificielle appliquée à l'infrastructure et aux systèmes.">
+	<section class="mb-6 animate-slide-up">
+		<h1 class="text-3xl font-bold text-slate-900 dark:text-cyan-100 md:text-4xl">Veille Technologique - Intelligence Artificielle</h1>
+		<p class="mt-3 max-w-3xl text-base leading-7 text-slate-700 dark:text-slate-200">
+			L'IA est aujourd'hui un moteur majeur de transformation dans l'IT: automatisation de taches, assistance au developpement, detection d'anomalies, cybersurveillance et optimisation des operations.
+		</p>
+		<p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+			Sujet focalisé sur l'IA appliquée aux infrastructures, systemes, reseaux et cybersecurité (SOC, analyse d'incidents, correlation de logs).
+		</p>
+	</section>
+
+	<SectionCard title="Contexte et objectifs" className="animate-slide-up stagger-1">
+		<p>
+			Dans un contexte SISR, l'IA impacte directement l'exploitation des infrastructures: priorisation des alertes, analyse predictive, tri d'incidents et acceleration de la production documentaire. Comprendre ces evolutions devient un atout pour un technicien reseau/systeme.
+		</p>
+		<p>
+			Cette veille me permet de suivre les outils, les tendances et les limites de l'IA afin de garder un regard technique, critique et professionnel sur les usages en entreprise.
+		</p>
+		<p class="mt-3 flex flex-wrap gap-2">
+			<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">Modeles open source</span>
+			<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">Automatisation</span>
+			<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">Securite/SOC</span>
+			<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-200">Infrastruc.</span>
+		</p>
+	</SectionCard>
+
+	<section class="mt-5 grid gap-5 md:grid-cols-3 animate-fade-in">
+		<ProjectCard title="Hugging Face" subtitle="Modeles, datasets et experimentation open source">
+			<p>
+				Plateforme de reference pour explorer des modeles IA pre-entraines, comparer des approches et tester rapidement des cas d'usage applicatifs. Ecosysteme actif et gratuit pour l'apprentissage et l'experimentation.
+			</p>
+			<div class="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+				<p>📊 Modeles IA, datasets, spaces et outils pratiques</p>
+			</div>
+			<p class="mt-3"><a href="https://huggingface.co/models" target="_blank" rel="noreferrer" class="font-medium text-teal-600 underline decoration-2 underline-offset-4 dark:text-cyan-300">Explorer les modeles</a></p>
+		</ProjectCard>
+
+		<ProjectCard title="Blog OpenAI" subtitle="Actualites, recherche et retours d'experience">
+			<p>
+				Source utile pour suivre les evolutions des modeles (GPT, dalle-3, etc), les bonnes pratiques d'usage et les enjeux de securite autour de l'IA generative. Publication reguliere de recherches et d'insights strategiques.
+			</p>
+			<div class="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+				<p>🔍 Research, safety et innovations majeures</p>
+			</div>
+			<p class="mt-3"><a href="https://openai.com/research" target="_blank" rel="noreferrer" class="font-medium text-teal-600 underline decoration-2 underline-offset-4 dark:text-cyan-300">Lire les articles</a></p>
+		</ProjectCard>
+
+		<ProjectCard title="Papers with Code" subtitle="Etat de l'art et implementations associees">
+			<p>
+				Reference pour relier publications scientifiques et implementations pratiques, afin de rester aligne sur les methodes les plus performantes. Filtrage par domaine: NLP, Computer Vision, Detection, etc.
+			</p>
+			<div class="mt-3 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+				<p>📖 Papers + code + leaderboards</p>
+			</div>
+			<p class="mt-3"><a href="https://paperswithcode.com/sota" target="_blank" rel="noreferrer" class="font-medium text-teal-600 underline decoration-2 underline-offset-4 dark:text-cyan-300">Parcourir l'etat de l'art</a></p>
+		</ProjectCard>
+	</section>
+
+	<SectionCard title="Actualites et articles recents" className="mt-5 animate-fade-in">
+		<p>
+			Pour rester a jour sur l'IA, ces sources agrègent articles, recherches et annonces majeures.
+		</p>
+		<div class="mt-4 grid gap-3 md:grid-cols-2">
+			<div class="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900/50">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Medium - AI & ML</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Articles techniques de praticiens et chercheurs (mise a jour quotidienne)</p>
+				<a href="https://medium.com/tag/artificial-intelligence" target="_blank" rel="noreferrer" class="mt-2 inline-block text-xs font-medium text-teal-600 underline decoration-1 underline-offset-2 dark:text-cyan-300">Consulter →</a>
+			</div>
+
+			<div class="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900/50">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Hacker News (AI tag)</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Discussions et liens vers papers/projets consideres importants par la communaute</p>
+				<a href="https://hn.algolia.com/?query=AI&type=story&dateRange=month&sort=byDate" target="_blank" rel="noreferrer" class="mt-2 inline-block text-xs font-medium text-teal-600 underline decoration-1 underline-offset-2 dark:text-cyan-300">Parcourir →</a>
+			</div>
+
+			<div class="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900/50">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">ArXiv - Computer Science</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Publications scientifiques preprint sur l'IA, apprentissage, vision par ordinateur (quotidien)</p>
+				<a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noreferrer" class="mt-2 inline-block text-xs font-medium text-teal-600 underline decoration-1 underline-offset-2 dark:text-cyan-300">Consulter →</a>
+			</div>
+
+			<div class="rounded-lg border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900/50">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Dev.to - AI/ML</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Tutoriels, guides pratiques et retours d'experience de developpeurs</p>
+				<a href="https://dev.to/t/ai" target="_blank" rel="noreferrer" class="mt-2 inline-block text-xs font-medium text-teal-600 underline decoration-1 underline-offset-2 dark:text-cyan-300">Lire les articles →</a>
+			</div>
+		</div>
+	</SectionCard>
+
+	<SectionCard title="Outils et frameworks pour SISR + IA" className="mt-5 animate-fade-in">
+		<p>
+			Solutions et frameworks reellement utiles pour automatiser, surveiller et analyser une infrastructure avec l'IA.
+		</p>
+		<div class="mt-4 space-y-3">
+			<div class="rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">LiteLLM & LangChain</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Frameworks pour construire des pipelines IA (chat, RAG, automation). Abstraction multi-cloud pour LLMs.</p>
+				<a href="https://github.com/BerriAI/litellm" target="_blank" rel="noreferrer" class="text-xs text-teal-600 dark:text-cyan-300">GitHub</a>
+				<span class="mx-1 text-xs text-slate-400">•</span>
+				<a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noreferrer" class="text-xs text-teal-600 dark:text-cyan-300">LangChain</a>
+			</div>
+
+			<div class="rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Ollama & Llama</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Lancer des LLMs localement (sans cloud). Ideal pour prototyper ou pour des usages critiques hors ligne.</p>
+				<a href="https://ollama.ai" target="_blank" rel="noreferrer" class="text-xs text-teal-600 dark:text-cyan-300">Site officiel</a>
+			</div>
+
+			<div class="rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Vector DBs (Weaviate, Pinecone, Milvus)</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Bases de donnees pour embeddings et recherche semantique. Utilisation dans RAG ou analyse de logs.</p>
+				<a href="https://weaviate.io" target="_blank" rel="noreferrer" class="text-xs text-teal-600 dark:text-cyan-300">Weaviate</a>
+				<span class="mx-1 text-xs text-slate-400">•</span>
+				<a href="https://pinecone.io" target="_blank" rel="noreferrer" class="text-xs text-teal-600 dark:text-cyan-300">Pinecone</a>
+			</div>
+
+			<div class="rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">MLFlow & Weights&Biases</p>
+				<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Versioning, tracking et deployment de modeles. Versionnage associe à la qualite et la traçabilité.</p>
+				<a href="https://mlflow.org" target="_blank" rel="noreferrer" class="text-xs text-teal-600 dark:text-cyan-300">MLFlow</a>
+			</div>
+		</div>
+	</SectionCard>
+
+	<SectionCard title="Competences et domaines cles (SISR + IA)" className="mt-5 animate-fade-in">
+		<p>
+			Domaines critiques pour maîtriser l'IA appliquée à l'infrastructure et aux systèmes.
+		</p>
+		<div class="mt-4 grid gap-3 md:grid-cols-2">
+			<div>
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">LLMs & Modeles</p>
+				<ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300">
+					<li>• Fine-tuning et RAG (Retrieval-Augmented Generation)</li>
+					<li>• Prompting et chainage (chaining)</li>
+					<li>• Modeles open vs closed (costs, latency)</li>
+					<li>• Token management et context windows</li>
+				</ul>
+			</div>
+
+			<div>
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">IA pour Infrastruc.</p>
+				<ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300">
+					<li>• Anomaly detection & forecasting</li>
+					<li>• Log parsing & root cause analysis</li>
+					<li>• Automatisation de runbooks</li>
+					<li>• SOC & threat detection</li>
+				</ul>
+			</div>
+
+			<div>
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Data & Ethics</p>
+				<ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300">
+					<li>• Preprocessing & labeling</li>
+					<li>• Bias et fairness</li>
+					<li>• Privacy & regulation (RGPD)</li>
+					<li>• Model explainability (XAI)</li>
+				</ul>
+			</div>
+
+			<div>
+				<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">Deployment & OPS</p>
+				<ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300">
+					<li>• Model serving (FastAPI, TorchServe)</li>
+					<li>• Containerization (Docker, K8s)</li>
+					<li>• Monitoring & observability</li>
+					<li>• Cost optimization (GPU, inference)</li>
+				</ul>
+			</div>
+		</div>
+	</SectionCard>
+
+	<SectionCard title="Actualites en temps reel (Google Alerts)" className="mt-5 animate-fade-in">
+		<p>
+			Articles filtres et agenes en direct via Google Alerts (flux RSS).
+		</p>
+		<div id="rss-container" class="mt-4 space-y-3">
+			<div class="rounded-lg bg-slate-100 p-4 text-center text-sm text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+				Chargement des actualites...
+			</div>
+		</div>
+		<p class="mt-3 text-xs text-slate-500 dark:text-slate-500">
+			Les articles se mettent a jour automatiquement. Cliquez sur un titre pour ouvrir la source.
+		</p>
+	</SectionCard>
+
+	<SectionCard title="Autres newsletters et ressources" className="mt-5 animate-fade-in">
+		<p>
+			Abonnements recommandes pour rester a jour, sans surcharge informationnelle.
+		</p>
+		<div class="mt-4 space-y-2 text-sm">
+			<p>
+				<strong class="text-slate-900 dark:text-slate-100">Synced</strong> (weekly)
+				<a href="https://syncedreview.com" target="_blank" rel="noreferrer" class="ml-2 text-teal-600 dark:text-cyan-300">Visiter</a>
+			</p>
+			<p class="text-xs text-slate-600 dark:text-slate-400">Revue specialisee sur la recherche et l'actualite IA, avec focus professionnel.</p>
+
+			<p class="mt-3">
+				<strong class="text-slate-900 dark:text-slate-100">The Batch (DeepLearning.AI)</strong>
+				<a href="https://www.deeplearning.ai/the-batch/" target="_blank" rel="noreferrer" class="ml-2 text-teal-600 dark:text-cyan-300">Visiter</a>
+			</p>
+			<p class="text-xs text-slate-600 dark:text-slate-400">Newsletter d'Andrew Ng sur l'IA generative et app pratiques.</p>
+
+			<p class="mt-3">
+				<strong class="text-slate-900 dark:text-slate-100">Stratechery & The Information</strong> (premium)
+				<a href="https://stratechery.com" target="_blank" rel="noreferrer" class="ml-2 text-teal-600 dark:text-cyan-300">Visiter</a>
+			</p>
+			<p class="text-xs text-slate-600 dark:text-slate-400">Analyses strategiques sur l'IA et son impact industrie & business.</p>
+
+			<p class="mt-3">
+				<strong class="text-slate-900 dark:text-slate-100">Papers with Code - Top Papers</strong>
+				<a href="https://paperswithcode.com/papers?q=&v=lst&p=1&d=7&s=0" target="_blank" rel="noreferrer" class="ml-2 text-teal-600 dark:text-cyan-300">Visiter</a>
+			</p>
+			<p class="text-xs text-slate-600 dark:text-slate-400">Filtrage par popularite pour suivre les papers incontournables (hebdo).</p>
+		</div>
+	</SectionCard>
+	<script is:inline>
+		(() => {
+			const RSS_FEED_URL = 'https://www.google.fr/alerts/feeds/14669931370414805931/11803309218847327697';
+			const RSS_PARSER_API = 'https://api.rss2json.com/v1/api.json?rss_url=';
+			const container = document.getElementById('rss-container');
+
+			const parseRss = async () => {
+				try {
+					const apiUrl = RSS_PARSER_API + encodeURIComponent(RSS_FEED_URL);
+					const response = await fetch(apiUrl);
+					
+					if (!response.ok) {
+						throw new Error(`HTTP error! status: ${response.status}`);
+					}
+
+					const data = await response.json();
+
+					if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+						container.innerHTML = '<div class="p-3 text-sm text-slate-600 dark:text-slate-400">Aucun article pour le moment.</div>';
+						return;
+					}
+
+					let html = '';
+					data.items.slice(0, 10).forEach((item) => {
+						const title = item.title || 'Sans titre';
+						const link = item.link || '#';
+						const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleDateString('fr-FR') : 'Date inconnue';
+						const desc = item.description ? item.description.substring(0, 120).replace(/<[^>]*>/g, '') + '...' : '';
+
+						html += `
+							<a href="${link}" target="_blank" rel="noopener noreferrer" class="block rounded-lg border border-slate-200 bg-white p-3 transition-colors hover:border-teal-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900/50 dark:hover:border-cyan-500/40 dark:hover:bg-slate-900/80">
+								<p class="text-sm font-semibold text-slate-900 dark:text-slate-100">${title}</p>
+								<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">${pubDate}</p>
+								${desc ? `<p class="mt-2 text-xs text-slate-700 dark:text-slate-300">${desc}</p>` : ''}
+							</a>
+						`;
+					});
+
+					container.innerHTML = html || '<div class="p-3 text-sm text-slate-600 dark:text-slate-400">Impossible de charger les articles.</div>';
+				} catch (error) {
+					console.error('RSS Parser Error:', error);
+					container.innerHTML = `
+						<div class="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-900/50 dark:bg-red-900/20 dark:text-red-300">
+							Impossible de charger les actualites (${error.message}). Actualisez la page ou verifiez la disponibilite du flux.
+						</div>
+					`;
+				}
+			};
+
+			// Charger au demarrage
+			parseRss();
+
+			// Actualiser toutes les 5 minutes
+			setInterval(parseRss, 5 * 60 * 1000);
+		})();
+	</script>
+</Layout>

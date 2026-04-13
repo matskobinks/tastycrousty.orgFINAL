@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionCard from '../components/SectionCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="Projets BTS E6 | Portfolio" description="Presentation des projets realises pour l'epreuve E6 du BTS SIO.">
+	<section class="mb-6 animate-slide-up">
+		<h1 class="text-3xl font-bold text-slate-900 dark:text-cyan-100 md:text-4xl">Projets BTS - Epreuve E6</h1>
+		<p class="mt-3 max-w-3xl text-base leading-7 text-slate-700 dark:text-slate-200">
+			Cette page reprend les informations de mes fiches de realisations professionnelles SISR. Les deux projets sont construits autour d'un meme contexte metier: l'entreprise fictive EcoSphere Architecture, specialisee dans la conception de batiments eco-responsables.
+		</p>
+	</section>
+
+	<SectionCard title="Contexte organisationnel commun" className="mb-5 animate-slide-up stagger-1">
+		<p>
+			EcoSphere Architecture regroupe environ quarante collaborateurs (architectes, dessinateurs-projeteurs, ingenieurs structure et pole administratif). L'activite repose sur des maquettes 3D et des plans volumineux, ce qui impose un haut niveau de disponibilite, de securite et de performance pour les donnees et les services.
+		</p>
+		<p>
+			Periode de realisation: 2023-2026 - Lieu: Paris - Modalite: realisations menees seul.
+		</p>
+	</SectionCard>
+
+	<section class="grid gap-5 md:grid-cols-2">
+		<ProjectCard
+			title="Projet 1 - Segmentation reseau, inter-VLAN et DHCP"
+			subtitle="Isolation des clients et serveurs avec routage centralise et adressage automatise"
+			technos={['Cisco Catalyst 3560 v2', 'Cisco Catalyst 2960s', 'VLAN', 'DHCP', 'Routage inter-VLAN']}
+		>
+			<p>
+				Objectif principal: segmenter le reseau en deux zones pour isoler les serveurs des clients, automatiser l'attribution des adresses IP via DHCP, conserver des IP fixes pour les ressources critiques et securiser les flux inter-VLAN.
+			</p>
+			<ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+				<li>Conception d'une architecture segmentee et plan d'adressage coherent.</li>
+				<li>Mise en place du routage centralise sur le commutateur de coeur.</li>
+				<li>Activation du service DHCP pour les postes clients avec baux maitrises.</li>
+				<li>Maintien d'adresses fixes pour les services critiques et administration distante simplifiee.</li>
+				<li>Validation de la connectivite inter-VLAN et controle des flux pour renforcer la securite.</li>
+			</ul>
+		</ProjectCard>
+
+		<ProjectCard
+			title="Projet 2 - Infrastructure systeme interne evolutive"
+			subtitle="AD, DNS, DHCP, serveur de fichiers et services web internes"
+			technos={['ESXi', 'Windows Server 2022', 'Rocky Linux 10.1 LTS', 'OPNsense', 'Nginx']}
+		>
+			<p>
+				Objectif principal: deployer une infrastructure complete pour gerer le parc informatique interne, fournir un espace de stockage reseau aux employes et preparer une base evolutive pour l'augmentation du nombre d'utilisateurs et de machines.
+			</p>
+			<ul class="mt-3 list-disc space-y-1 pl-5 text-sm">
+				<li>Serveur Windows Server 2022 pour Active Directory, DNS et DHCP.</li>
+				<li>Second Windows Server 2022 pour serveur de fichiers et load balancing Nginx.</li>
+				<li>Deux machines Rocky Linux LTS pour heberger l'intranet de l'entreprise.</li>
+				<li>Une machine OPNsense pour le routage entre reseaux SRV et CLIENT avec liste de blocage simple.</li>
+				<li>Integration de la solution sur les hyperviseurs ESXi du centre de formation Ingetis.</li>
+			</ul>
+		</ProjectCard>
+	</section>
+
+	<SectionCard title="Documents E6" className="mt-5 animate-fade-in">
+		<p>
+			Consulte la feuille annexe dans le site et telecharge le tableau de synthese Excel.
+		</p>
+		<div class="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3">
+			<button
+				type="button"
+				id="show-pdf-viewer"
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-slate-300 bg-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 transition-colors duration-150 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+			>
+				Afficher Feuille Annexe FINAL.pdf
+			</button>
+			<a
+				href="/docs/Tableau%20de%20synth%C3%A8se%20Final.xlsx"
+				download
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-lg border border-slate-300 bg-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 transition-colors duration-150 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+			>
+				Telecharger Tableau de synthese Final.xlsx
+			</a>
+		</div>
+
+		<div id="doc-viewer" class="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+			<iframe
+				id="pdf-viewer"
+				title="Visionneuse PDF"
+				src="/docs/Feuille%20Annexe%20FINAL.pdf#toolbar=1"
+				class="h-[50vh] w-full md:h-[70vh]"
+			></iframe>
+		</div>
+	</SectionCard>
+
+	<SectionCard title="Competences mobilisees et documentation" className="mt-5 animate-fade-in">
+		<p>
+			Au travers de ces deux realisations, j'ai travaille la conception, l'installation, les tests, le deploiement et l'exploitation d'une infrastructure reseau/systeme complete. Les projets m'ont permis de consolider ma rigueur de configuration et ma methodologie de validation.
+		</p>
+		<p>
+			Les ressources documentaires et techniques utilisees incluent mes notes de cours, la documentation Microsoft, Tom's Guide ainsi que les outils et hyperviseurs du centre de formation.
+		</p>
+		<p>
+			Acces a la documentation des productions: <a href="https://tastycrousty.org" target="_blank" rel="noreferrer" class="font-medium text-teal-600 underline decoration-2 underline-offset-4 dark:text-cyan-300">https://tastycrousty.org</a>
+		</p>
+	</SectionCard>
+
+	<script is:inline>
+		(() => {
+			const PDF_PATH = '/docs/Feuille%20Annexe%20FINAL.pdf#toolbar=1';
+			const pdfViewer = document.getElementById('pdf-viewer');
+			const showPdfButton = document.getElementById('show-pdf-viewer');
+
+			showPdfButton?.addEventListener('click', () => {
+				if (!pdfViewer) return;
+				if (!pdfViewer.getAttribute('src')) {
+					pdfViewer.setAttribute('src', PDF_PATH);
+				}
+				pdfViewer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			});
+		})();
+	</script>
+</Layout>

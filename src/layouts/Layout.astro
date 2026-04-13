@@ -1,0 +1,82 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Portfolio BTS SIO SISR',
+	description =
+		'Portfolio E5 BTS SIO option SISR : parcours, projets BTS, projets personnels et veille technologique.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<script is:inline>
+			(() => {
+				const stored = localStorage.getItem('theme');
+				const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				if (stored === 'dark' || (!stored && systemPrefersDark)) {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
+			})();
+		</script>
+		<title>{title}</title>
+	</head>
+	<body class="font-['IBM_Plex_Sans'] antialiased bg-slate-100 text-slate-800 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100">
+		<div class="relative min-h-screen overflow-x-hidden">
+			<div class="pointer-events-none absolute inset-0 -z-10">
+				<div class="absolute -top-20 left-10 h-64 w-64 rounded-full bg-sky-200/35 blur-2xl dark:bg-cyan-500/12"></div>
+				<div class="absolute bottom-0 right-10 h-72 w-72 rounded-full bg-slate-200/45 blur-2xl dark:bg-slate-700/25"></div>
+			</div>
+
+			<Header />
+			<main class="mx-auto w-full max-w-6xl px-4 pb-16 pt-8 md:px-6 md:pt-12">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+
+		<script is:inline>
+			(() => {
+				const root = document.documentElement;
+				const toggle = document.querySelector('[data-theme-toggle]');
+				const label = document.querySelector('[data-theme-label]');
+
+				const updateLabel = () => {
+					if (!label) return;
+					label.textContent = root.classList.contains('dark') ? 'Mode clair' : 'Mode sombre';
+				};
+
+				updateLabel();
+
+				toggle?.addEventListener('click', () => {
+					root.classList.toggle('dark');
+					const nextTheme = root.classList.contains('dark') ? 'dark' : 'light';
+					localStorage.setItem('theme', nextTheme);
+					updateLabel();
+				});
+			})();
+		</script>
+	</body>
+</html>

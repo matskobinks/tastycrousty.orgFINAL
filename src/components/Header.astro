@@ -1,0 +1,50 @@
+---
+const links = [
+	{ href: '/', label: 'Accueil' },
+	{ href: '/bts-sio', label: 'BTS SIO' },
+	{ href: '/projets-bts', label: 'Projets BTS' },
+	{ href: '/projets-perso', label: 'Projets Perso' },
+	{ href: '/veille-techno', label: 'Veille Techno' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-30 border-b border-slate-200/80 bg-white/85 backdrop-blur-sm transition-colors duration-200 dark:border-slate-800 dark:bg-slate-950/85">
+	<div class="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 md:px-6">
+		<a href="/" class="text-sm font-bold uppercase tracking-[0.2em] text-teal-600 dark:text-cyan-300">Portfolio SISR</a>
+
+		<nav aria-label="Navigation principale" class="order-3 w-full md:order-2 md:w-auto">
+			<ul class="flex flex-wrap gap-1 rounded-xl bg-slate-100/90 p-1 dark:bg-slate-900/80">
+				{
+					links.map((item) => {
+						const isActive = currentPath === item.href;
+						return (
+							<li>
+								<a
+									href={item.href}
+									class={`rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-150 ${
+										isActive
+											? 'bg-white text-slate-900 shadow-sm dark:bg-slate-800 dark:text-cyan-200'
+											: 'text-slate-600 hover:bg-white hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-100'
+									}`}
+								>
+									{item.label}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</nav>
+
+		<button
+			type="button"
+			data-theme-toggle
+			class="order-2 inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm transition-colors duration-150 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 md:order-3"
+		>
+			<span aria-hidden="true">◐</span>
+			<span data-theme-label>Mode sombre</span>
+		</button>
+	</div>
+</header>

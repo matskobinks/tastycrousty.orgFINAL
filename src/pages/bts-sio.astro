@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionCard from '../components/SectionCard.astro';
+---
+
+<Layout title="Formation BTS SIO | Portfolio" description="Presentation du BTS SIO et de l'option SISR.">
+	<section class="mb-6 animate-slide-up">
+		<h1 class="text-3xl font-bold text-slate-900 dark:text-cyan-100 md:text-4xl">Formation BTS SIO - Option SISR</h1>
+		<p class="mt-3 max-w-3xl text-base leading-7 text-slate-700 dark:text-slate-200">
+			Le BTS Services Informatiques aux Organisations forme des techniciens capables de repondre aux besoins concrets des entreprises en matiere d'infrastructure, de services numeriques et de support utilisateurs.
+		</p>
+	</section>
+
+	<section class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+		<SectionCard title="RNCP" className="animate-slide-up stagger-1">
+			<p class="text-sm leading-6">
+				Titre reconnu par l'Etat (RNCP niveau 5), correspondant a un niveau Bac+2.
+			</p>
+		</SectionCard>
+		<SectionCard title="Duree" className="animate-slide-up stagger-2">
+			<p class="text-sm leading-6">
+				Formation en 2 ans, en initial ou en alternance selon l'etablissement.
+			</p>
+		</SectionCard>
+		<SectionCard title="Volume horaire" className="animate-slide-up stagger-3">
+			<p class="text-sm leading-6">
+				Environ 1 350 heures de cours et TP sur les deux annees.
+			</p>
+		</SectionCard>
+		<SectionCard title="Salaire de sortie" className="animate-slide-up stagger-4">
+			<p class="text-sm leading-6">
+				Debut de carriere souvent entre 24k et 32k euros brut/an selon poste et region.
+			</p>
+		</SectionCard>
+	</section>
+
+	<section class="grid gap-5 md:grid-cols-2">
+		<SectionCard title="Pourquoi l'option SISR ?" className="animate-slide-up stagger-1">
+			<p>
+				L'option SISR (Solutions d'Infrastructure, Systemes et Reseaux) est orientee vers l'administration des systemes, la gestion des reseaux, la virtualisation et la securisation des services.
+			</p>
+			<p>
+				Elle correspond a mon projet professionnel car elle permet d'acquerir une vision globale d'un SI: de la couche materielle a la supervision, en passant par la haute disponibilite et la protection des donnees.
+			</p>
+		</SectionCard>
+
+		<SectionCard title="Matieres et competences cles" className="animate-slide-up stagger-2">
+			<ul class="list-disc space-y-2 pl-5">
+				<li>Administration Linux/Windows et services d'infrastructure.</li>
+				<li>Reseaux TCP/IP, routage, segmentation VLAN et securite perimetrique.</li>
+				<li>Virtualisation, scripts d'automatisation et documentation technique.</li>
+				<li>Gestion de projet, veille technologique et communication professionnelle.</li>
+			</ul>
+		</SectionCard>
+	</section>
+
+	<SectionCard title="Rythme et apprentissage en classe" className="mt-5 animate-fade-in">
+		<p>
+			Le rythme alterne entre apports theoriques, travaux pratiques, projets et immersion en entreprise. Cette complementarite permet de consolider rapidement les competences techniques tout en developpant les bons reflexes terrain.
+		</p>
+		<p>
+			En classe, nous mettons en place des architectures completes: installation de services, plans d'adressage, supervision, sauvegarde et procedures de reprise. Cette approche par cas concrets facilite la preparation a l'epreuve E5 et aux attentes du monde professionnel.
+		</p>
+	</SectionCard>
+
+	<section class="mt-5 grid gap-5 md:grid-cols-2">
+		<SectionCard title="Organisation de la formation" className="animate-slide-up stagger-1">
+			<ul class="list-disc space-y-2 pl-5">
+				<li>Culture generale, anglais, CEJM et expression professionnelle.</li>
+				<li>Bloc technique SISR: reseaux, systemes, virtualisation, cyberssecurite.</li>
+				<li>Ateliers de professionnalisation et projets en equipe.</li>
+				<li>Preparation des epreuves E4, E5 et de la soutenance.</li>
+			</ul>
+		</SectionCard>
+
+		<SectionCard title="Debouches apres BTS SIO SISR" className="animate-slide-up stagger-2">
+			<ul class="list-disc space-y-2 pl-5">
+				<li>Technicien systemes et reseaux.</li>
+				<li>Administrateur infrastructures junior.</li>
+				<li>Technicien support N2 / exploitation.</li>
+				<li>Technicien cybersecurite (SOC junior, hardening, supervision).</li>
+				<li>Poursuite d'etudes en licence pro, bachelor ou ecole specialisee.</li>
+			</ul>
+		</SectionCard>
+	</section>
+</Layout>
