@@ -90,6 +90,20 @@ const cnilPdfUrls = existsSync(cnilDirUrl)
 			>
 				Telecharger mes certifications (PDF)
 			</a>
+			<a
+				href="/docs/TOEIC.pdf"
+				download
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-slate-700 px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-slate-800"
+			>
+				Telecharger mon certificat TOEIC (PDF)
+			</a>
+			<a
+				href="/docs/CertificatMoocAnssi.pdf"
+				download
+				class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-slate-700 px-5 py-3 text-sm font-semibold text-white transition-colors duration-150 hover:bg-slate-800"
+			>
+				Telecharger mon certificat MOOC ANSSI (PDF)
+			</a>
 			<button
 				type="button"
 				id="download-cnil-certifications"
@@ -101,7 +115,7 @@ const cnilPdfUrls = existsSync(cnilDirUrl)
 			</button>
 		</div>
 		<p class="text-xs text-slate-500 dark:text-slate-400">
-			Le bouton CNIL telecharge automatiquement tous les PDF presents dans /public/docs/cnil.
+			Le bouton CNIL telecharge automatiquement tous les PDF.
 		</p>
 	</SectionCard>
 
